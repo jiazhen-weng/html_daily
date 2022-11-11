@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>旋转加载动画效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <style>
+        .wrap {
+            align-content: flex-start;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .loading {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            perspective: 800px;
+            position: relative;
+        }
+
+        .loading .item {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .loading .item:first-child {
+            border-bottom: 7px solid #FDEA2E;
+            transform: rotateX(35deg) rotateY(-45deg);
+            animation: rotate-one 1s linear infinite;
+        }
+
+        .loading .item:nth-child(2) {
+            border-right: 7px solid #F40968;
+            transform: rotateX(50deg) rotateY(10deg);
+            animation: rotate-two 1s linear infinite;
+        }
+
+        .loading .item:last-child {
+            border-top: 7px solid #77D970;
+            transform: rotateX(35deg) rotateY(55deg);
+            animation: rotate-three 1s linear infinite;
+        }
+
+        @keyframes rotate-one {
+            to {
+                transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+            }
+        }
+
+        @keyframes rotate-two {
+            to {
+                transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+            }
+        }
+
+        @keyframes rotate-three {
+            to {
+                transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+            }
+        }
+
+        .code {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .code img {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>旋转加载动画效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="loading">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="../static/image/loading_code_1.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading_code_2.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading_code_2_1.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading_code_3.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading_code_4.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: true,
+    })        
+</script>
+
+</html>

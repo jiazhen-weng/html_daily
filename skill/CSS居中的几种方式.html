@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS居中的几种方式</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <style>
+        .wrap {
+            align-content: flex-start;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            margin: 30px 0px;
+            margin-bottom: 0px;
+        }
+
+        button {
+            font-family: Philosopher, AlimamaShuHeiTi-Bold;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .effect_wrap_1 {
+            width: 180px;
+            height: 180px;
+            border: 3px solid #ff2342;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #ff2342;
+            display: flex;
+        }
+
+        .effect_wrap_4 {
+            width: 180px;
+            position: relative;
+        }
+
+        .effect_wrap_4 button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+            transform: translateX(-50%);
+            width: 120px;
+            height: 50px;
+            border: none;
+            background: #ff2342;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px 5px #ff2342;
+        }
+
+        .effect_wrap_1 button {
+            width: 120px;
+            height: 50px;
+            border: none;
+            background: #ff2342;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: auto;
+            box-shadow: 0px 0px 15px 5px #ff2342;
+        }
+
+        .effect_wrap_2 {
+            width: 180px;
+            height: 180px;
+            border: 3px solid #ff2342;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #ff2342;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .effect_wrap_2 button {
+            width: 120px;
+            height: 50px;
+            border: none;
+            background: #ff2342;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px 5px #ff2342;
+        }
+
+        .effect_wrap_3 {
+            width: 180px;
+            height: 180px;
+            border: 3px solid #ff2342;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #ff2342;
+            display: grid
+        }
+
+        .effect_wrap_3 button {
+            width: 120px;
+            height: 50px;
+            border: none;
+            background: #ff2342;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px 5px #ff2342;
+            margin: auto;
+        }
+
+        .effect img {
+            width: 100px !important;
+            height: 100px;
+            border-radius: 10px;
+            filter: drop-shadow(2px 0px 10px #ff2342);
+            animation: none;
+        }
+
+        .swiper-slide img {
+            animation: none;
+        }
+
+
+
+        .code {
+            width: 100%;
+            padding: 15px;
+            padding-top: 0px;
+        }
+
+        .code img {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>块元素居中四种方式</span>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="effect">
+                            <div class="effect_wrap_1">
+                                <button>高度确定</button>
+                            </div>
+                        </div>
+                        <img src="../static/image/2022-10-30-1.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="effect">
+                            <div class="effect_wrap_4">
+                                <button>高度不确定</button>
+                            </div>
+                        </div>
+                        <img src="../static/image/2022-10-30-4.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="effect">
+                            <div class="effect_wrap_2">
+                                <button>flex布局</button>
+                            </div>
+                        </div>
+                        <img src="../static/image/2022-10-30-2.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="effect">
+                            <div class="effect_wrap_3">
+                                <button>grid布局</button>
+                            </div>
+                        </div>
+                        <img src="../static/image/2022-10-30-3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: true,
+        speed: 200,
+    })        
+</script>
+
+</html>

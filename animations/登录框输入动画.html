@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS 登录框输入动画</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <style>
+        :root {
+            --clr-neon: hsl(317 100% 54%);
+            --clr-bg: hsl(323 21% 16%);
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 0px 20px;
+        }
+
+        .login {
+            width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center
+        }
+
+        .input-item {
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            height: 55px;
+        }
+
+        .input-item input {
+            width: 100%;
+            background: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            font-size: 1em;
+            letter-spacing: 0.1em;
+            padding: 15px 0 5px;
+            height: 55px;
+            font-family: AlimamaShuHeiTi-Bold;
+        }
+
+        .input-item span {
+            position: absolute;
+            left: 0;
+            padding: 15px 0 5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: .5s;
+            pointer-events: none;
+            font-family: AlimamaShuHeiTi-Bold;
+        }
+
+        .input-item input:valid~span,
+        .input-item input:focus~span {
+            color: #2196f3;
+            transform: translateY(-16px);
+            font-size: 0.85em;
+        }
+
+        .input-item i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .input-item i::before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff1b69, #ff0, #2196f3, #9c27b0, #ff1b69);
+            animation: animate 2s linear infinite;
+        }
+
+        .input-item input:valid~i::before,
+        .input-item input:focus~i::before {
+            left: 0;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 300px;
+            }
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>登录框输入动画</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="login">
+                <div class="input-item flex">
+                    <input autocomplete="new-password" type="text" required="required">
+                    <span>账 户</span>
+                    <i></i>
+                </div>
+                <div class="input-item flex">
+                    <input autocomplete="new-password" type="text" required="required">
+                    <span>密 码</span>
+                    <i></i>
+                </div>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-10-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-10-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-10-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-10-04.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-10-05.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+        },
+    })        
+</script>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS logo动画效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .effect span {
+            font-size: 40px;
+            margin-left: 20px;
+            padding: 12px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px #000000,
+                2px 2px 2px #000000,
+                inset 2px 2px 10px #000000,
+                inset 2px 2px 10px #000000,
+                inset 2px 2px 10px #000000,
+                inset 2px 2px 10px #000000;
+            text-shadow: 0px 0px 16px #0072ff, 0px 0px 8px #0072ff, 0px 0px 5px #0072ff, 0px 0px 11px #0072ff;
+            cursor: pointer;
+            animation: animate 3s linear infinite;
+        }
+
+        .effect span:first-child {
+            animation-delay: 0.75s !important;
+        }
+
+        .effect span:nth-child(2n) {
+            animation-delay: 1.5s;
+        }
+
+        .effect span:nth-child(3n) {
+            animation-delay: 2.25s;
+        }
+
+        .effect span:last-child {
+            animation-delay: 3s;
+        }
+
+        @keyframes animate {
+            from {
+                filter: hue-rotate(0deg);
+            }
+
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .code img{
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>CSS logo动画效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <span class="iconfont icon-html5"></span>
+            <span class="iconfont icon-node-js"></span>
+            <span class="iconfont icon-python"></span>
+            <span class="iconfont icon-github"></span>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-06-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-06-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-06-03.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 4000,
+        },
+    })        
+</script>
+
+</html>

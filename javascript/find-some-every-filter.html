@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>数组的常用方法</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <style>
+        .wrap {
+            align-content: flex-start;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            margin: 30px 0px;
+            margin-bottom: 0px;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            height: 180px;
+            margin: auto;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 0px 25px;
+        }
+
+        .effect .describe {
+            width: 100%;
+            font-family: AlimamaShuHeiTi-Bold;
+            height: 16px;
+            color: #666;
+            font-size: 16px !important;
+        }
+
+        .effect span {
+            width: 100%;
+            height: 40px;
+            font-size: 28px;
+            font-family: Philosopher;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+
+        .swiper-slide-active .effect_js>span {
+            animation: textShow 0s forwards;
+            opacity: 0;
+        }
+
+        .code {
+            width: 100%;
+            padding: 15px;
+            padding-top: 0px;
+        }
+
+        .code img {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>数组中常用的方法</span>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="effect effect_js">
+                            <span class="describe">// find的基本用法</span>
+                            <span>let array = [1,2,3,4,5]</span>
+                            <span class="describe">// 判断数组是否有小于3的元素</span>
+                            <span>array.find(item=>item<3)</span>
+                            <span class="describe">// 返回第一个符合条件的元素</span>
+                            <span>1</span>
+                        </div>
+                        <img src="../static/image/2022-10-31-js-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="effect effect_js">
+                            <span class="describe">// some的基本使用</span>
+                            <span>let array = [1,2,3,4,5]</span>
+                            <span class="describe">// 判断数组是否有小于3的元素</span>
+                            <span>array.some(item=>item<3)</span>
+                            <span class="describe">// 返回true或false</span>
+                            <span>true</span>
+                        </div>
+                        <img src="../static/image/2022-10-31-js-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="effect effect_js">
+                            <span class="describe">// every的基本使用</span>
+                            <span>let array = [1,2,3,4,5]</span>
+                            <span class="describe">// 判断数组元素是否全部小于3</span>
+                            <span>array.every(item=>item<3)</span>
+                            <span class="describe">// 返回true或false</span>
+                            <span>false</span>
+                        </div>
+                        <img src="../static/image/2022-10-31-js-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="effect effect_js">
+                            <span class="describe">// filter的基本使用</span>
+                            <span>let array = [1,2,3,4,5]</span>
+                            <span class="describe">// 判断数组有小于3的全部元素</span>
+                            <span>array.filter(item=>item<3)</span>
+                            <span class="describe">// 返回小于3的数组</span>
+                            <span>[1,2]</span>
+                        </div>
+                        <img src="../static/image/2022-10-31-js-04.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 6000,
+        },
+    })        
+</script>
+
+</html>

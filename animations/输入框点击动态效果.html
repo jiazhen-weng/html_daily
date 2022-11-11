@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>输入框点击动态效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <style>
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            margin: 30px 0px;
+            font-family: "Philosopher";
+            font-weight: 700;
+            margin-bottom: 0px;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+            
+        }
+
+        .input{
+            position: relative;
+        }
+
+        input {
+            width: 250px;
+            color: white;
+            font-size: inherit;
+            font-family: inherit;
+            background-color: hsl(236, 32%, 26%);
+            padding: 0.35em 0.45em;
+            border: 1px solid transparent;
+            transition: background-color 0.3s ease-in-out;
+            height: 50px;
+            line-height: 50px;
+            font-family: AlimamaShuHeiTi-Bold;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input::placeholder {
+            color: hsla(0, 0%, 100%, 0.6);
+        }
+
+        .effect span {
+            position: absolute;
+            background-color: #fc2f70;
+            transform-origin: center;
+            transition: transform 0.5s ease;
+        }
+
+        .bottom,
+        .top {
+            height: 1px;
+            left: 0;
+            right: 0;
+            transform: scaleX(0);
+        }
+
+        .left,
+        .right {
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            transform: scaleY(0);
+        }
+
+        .top {
+            top: 0;
+        }
+
+        .bottom {
+            bottom: 0;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+
+        input:focus~.top,
+        input:focus~.bottom {
+            transform: scaleX(1);
+        }
+
+        input:focus~.left,
+        input:focus~.right {
+            transform: scaleY(1);
+        }
+
+        .code {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .code img {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>输入框点击动态效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+           <div class="input">
+                <input type="text" placeholder="请输入姓名">
+                <span class="bottom"></span>
+                <span class="right"></span>
+                <span class="top"></span>
+                <span class="left"></span>
+           </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../static/image/loading-20221025-1.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading-20221025-2.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading-20221025-3.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading-20221025-4.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: true,
+    })        
+</script>
+
+</html>

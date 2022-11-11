@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>图片水滴动画效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <style>
+        .wrap {
+            align-content: flex-start;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            margin: 30px 0px;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://images.pexels.com/photos/14167293/pexels-photo-14167293.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load');
+            background-repeat: no-repeat;
+            border-radius: 45% 55% 70% 28% / 45% 40% 55% 48%;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px rgb(255, 255, 255, 0.25);
+            animation: bold 2s linear infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bold{
+            0%,100%{
+                border-radius: 45% 55% 70% 28% / 45% 40% 55% 48%;
+            }
+            40% {
+                border-radius: 45% 30% 35% 48% / 28% 20% 70% 70%;
+            }
+            80% {
+                border-radius: 100% 50% 50% 100% / 100% 100% 50% 50%;
+            }
+        }
+
+        .code {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .code img {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>图片水滴动画效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="image">
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../static/image/loading-20221026-bold-1.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading-20221026-bold-2.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: true,
+    })        
+</script>
+
+</html>

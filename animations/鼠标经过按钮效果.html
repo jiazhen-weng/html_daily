@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>鼠标经过按钮效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <style>
+        .wrap {
+            align-content: flex-start;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            margin: 30px 0px;
+            font-family: "Philosopher";
+            font-weight: 700;
+            margin-bottom: 0px;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        button {
+            z-index: 1;
+            position: relative;
+            font-size: inherit;
+            font-family: inherit;
+            color: white;
+            padding: 0.7em 1.2em;
+            outline: none;
+            border: none;
+            background-color: #ff2741;
+            font-family: AlimamaShuHeiTi-Bold;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        button::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 4px solid #ff2741;
+            transform-origin: center;
+            transform: scale(1);
+        }
+
+        button:hover::before {
+            transition: all 0.75s ease-in-out;
+            transform-origin: center;
+            transform: scale(1.75);
+            opacity: 0;
+        }
+
+
+        .code {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .code img {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>鼠标经过按钮效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <button>小红书🍠</button>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../static/image/loading-20221026-1.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading-20221026-2.png"></div>
+                    <div class="swiper-slide"><img src="../static/image/loading-20221026-3.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: true,
+    })        
+</script>
+
+</html>
