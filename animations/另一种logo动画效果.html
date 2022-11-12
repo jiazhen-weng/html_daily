@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS logo动画效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .result span {
+            font-size: 120px;
+        }
+        .result{
+            position: relative;
+            cursor: pointer;
+        }
+        .result:hover::before {
+           height: 100%;
+           border-bottom: 4px solid;
+           border-image: linear-gradient(90deg, #0275a9 0%, #0275a9 25%, #0275a9 50%, #ffd400 75%, #ffd400 100%) 1;
+        }
+        .result::before{
+            content: "\ec18";
+            height: 0px;
+            background-image: linear-gradient(134deg, #0275a9 0%, #0275a9 25%, #0275a9 50%, #ffd400 75%, #ffd400 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 120px;
+            font-family: "iconfont" !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+        }
+
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>CSS logo动画效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="result">
+                <span class="iconfont icon-python"></span>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-12--01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-12--02.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 4000,
+        },
+    })        
+</script>
+
+</html>
