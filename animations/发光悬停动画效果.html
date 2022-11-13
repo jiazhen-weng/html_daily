@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS 发光悬停动画效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+
+        .result {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            height: 100px;
+            width: 100px;
+            transition: all 0.5s ease-in-out;
+            margin-top: 50px;
+        }
+
+        .result span {
+            font-size: 80px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 5px;
+            text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red, 0 0 80px red, 0 0 100px red, 0 0 120px red, 0 0 140px red;
+            box-shadow: 0px 0px 0.1em 0 red;
+        }
+
+
+        .result:hover {
+            transform: rotate(-30deg) skew(25deg);
+        }
+
+        .result:hover span:first-child {
+            opacity: 0.25;
+            transform: translate(0px, 0px);
+        }
+
+        .result:hover span:nth-child(2) {
+            opacity: 0.5;
+            transform: translate(20px, -20px);
+        }
+
+        .result:hover span:nth-child(3) {
+            opacity: 0.75;
+            transform: translate(40px, -40px);
+        }
+
+        .result:hover span:last-child {
+            opacity: 1;
+            transform: translate(60px, -60px);
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>发光悬停动画效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="result">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="iconfont icon-github"></span>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-13-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-13-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-13-03.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 4000,
+        },
+    })        
+</script>
+
+</html>
