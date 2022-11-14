@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS玻璃按钮悬停效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .button {
+            height: 50px;
+            margin: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            width: 155px;
+        }
+
+        .button a {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            color: #fff;
+            display: flex;
+            font-size: 18px;
+            font-weight: 700;
+            left: 0;
+            top: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            letter-spacing: 1px;
+            text-decoration: none;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            z-index: 1;
+            transition: 0.5s;
+        }
+
+        .button a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to left,
+                    rgba(255, 255, 255, 0.15),
+                    transparent);
+            transform: skewX(45deg) translateX(0);
+            transition: 0.5s;
+        }
+
+        .button:hover a::before {
+            transform: skewX(45deg) translateX(200%);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            height: 10px;
+            width: 0px;
+            background: #f00;
+            border-radius: 10px;
+            transition: 0.5s;
+            transition-delay: 0s;
+        }
+
+        .button:hover::before {
+            bottom: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+            transition-delay: 0.5s;
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -5px;
+            height: 10px;
+            width: 0px;
+            background: #f00;
+            border-radius: 10px;
+            transition: 0.5s;
+            transition-delay: 0s;
+        }
+
+        .button:hover::after {
+            top: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+            transition-delay: 0.5s;
+        }
+
+        .button::before,
+        .button::after {
+            background: #fc2f70;
+            box-shadow: 0 0 5px #fc2f70,
+                0 0 15px #fc2f70,
+                0 0 30px #fc2f70,
+                0 0 60px #fc2f70;
+        }
+
+        .button:active a {
+            color: #000;
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>玻璃按钮悬停效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="button">
+                <a href="https://github.com/iyuyoung">青阳</a>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-04.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-05.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+        },
+    })        
+</script>
+
+</html>
