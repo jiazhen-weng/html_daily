@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>翻转按钮效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .flip {
+            background-color: transparent;
+            width: 180px;
+            height: 48px;
+            line-height: 42px;
+            perspective: 500px;
+            padding: 3px;
+            background: #ecedf0;
+            border-radius: 28px;
+            box-shadow: 0px 0px 20px 5px #fc2f70;
+        }
+
+
+        .inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            pointer-events: none
+        }
+
+
+        .flip:hover .inner {
+            transform: rotateX(180deg)
+        }
+
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            font-size: 20x;
+            font-weight: 500;
+            color: white
+        }
+
+
+        .front {
+            background: #fc2f70;
+            font-size: 20px;
+        }
+
+
+        .back {
+            background: #d61e58;
+            transform: rotateX(180deg);
+            font-size: 18px;
+        }
+
+        .iconfont{font-size: 20px;}
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>翻转按钮效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <a href="https://github.com/iyuyoung" class="flip">
+                <div class="inner">
+                    <div class="front">
+                        青阳  <i class="iconfont icon-github"></i>
+                    </div>
+                    <div class="back">
+                        点击访问
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-001.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-002.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-14-003.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 4000,
+        },
+    })        
+</script>
+
+</html>
