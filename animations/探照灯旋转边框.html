@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>探照灯旋转边框</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_44t1dx530kg.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 0px 20px;
+            position: relative;
+            margin: auto;
+            animation: background 0.5s linear infinite;
+        }
+
+        .item {
+            position: relative;
+            z-index: 0;
+            width: 250px;
+            height: 150px;
+            margin: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+        .item::before {
+            content: '';
+            position: absolute;
+            z-index: -2;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: #1a232a;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-image: conic-gradient(transparent, rgba(168, 239, 255, 1), transparent 30%);
+            animation: rotate 4s linear infinite;
+        }
+        .item:hover::before{
+            animation-play-state: paused;
+        }
+        .item::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 6px;
+            top: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            background: #000;
+            border-radius: 5px;
+        }
+        .item-li::after {
+            animation: change 5s infinite linear;
+        }
+        @keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+        @keyframes change {
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>探照灯旋转边框</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="item item-li"></div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-18-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-18-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-18-03.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 3500,
+        },
+    })        
+</script>
+
+</html>
