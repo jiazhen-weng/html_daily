@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS个人名片展示效果</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_q1uicgqcwzd.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            position: relative;
+            margin: auto;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 1.5rem 2rem;
+            width: 100%;
+            max-width: 400px;
+            background-color: #1b2028;
+            border-radius: 16px;
+            position: relative;
+            background-clip: padding-box;
+            text-align: center;
+            color: #f1f3f3;
+            overflow: hidden;
+        }
+
+        .profile_wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile::before {
+            content: "";
+            background-image: conic-gradient(#fe2441 20deg, transparent 120deg);
+            width: 150%;
+            height: 150%;
+            position: absolute;
+            animation: rotate 2s linear infinite;
+            top: -70px;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .profile:after {
+            content: "";
+            display: block;
+            top: 1px;
+            z-index: 0;
+            position: absolute;
+            border-radius: 16px;
+            background: #1b2028;
+            width: 258px;
+            height: 296px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: auto;
+        }
+
+        .profile-image img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+
+        .profile-username {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .profile-user-handle {
+            color: #7d8396;
+        }
+
+        .profile-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-actions>* {
+            margin: 0 0.25rem;
+        }
+
+        .btn {
+            border: 0;
+            background-color: transparent;
+            padding: 0;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            line-height: 1;
+            transition: 0.15s ease;
+        }
+
+        .btn--primary {
+            border-radius: 99em;
+            background-color: #fc2f70;
+            background-image: linear-gradient(135deg, #fa80a7, #fc2f70);
+            color: #fff;
+            padding: 0 1.375em;
+        }
+
+        .btn--primary:hover,
+        .btn--primary:focus {
+            background-size: 150%;
+        }
+
+        .btn--icon {
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+            border: 3px solid #343945;
+            color: #7d8396;
+        }
+
+        .btn--icon i {
+            font-size: 1.25em;
+            color: #fff;
+        }
+
+        .btn--icon:hover,
+        .btn--icon:focus {
+            border-color: #7d8396;
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>个人名片展示效果</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="profile">
+                <div class="profile_wrap">
+                    <div class="profile-image">
+                        <img src="https://sns-avatar-qc.xhscdn.com/avatar/6352b8bbec3304af388ecffd.jpg" />
+                    </div>
+                    <h2 class="profile-username">青阳</h2>
+                    <small class="profile-user-handle">@iyuyoung</small>
+                    <div class="profile-actions">
+                        <button class="btn btn--primary">Follow</button>
+                        <button class="btn btn--icon">
+                            <i class="iconfont icon-share"></i>
+                        </button>
+                        <button class="btn btn--icon">
+                            <i class="iconfont icon-gengduo"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-22-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-22-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-22-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-22-04.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+        },
+    })        
+</script>
+
+</html>

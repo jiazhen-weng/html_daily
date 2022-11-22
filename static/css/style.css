@@ -148,7 +148,7 @@ body {
     letter-spacing: initial;
     min-height: 704px
 }
-
+button{font-family: AlimamaShuHeiTi-Bold}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
