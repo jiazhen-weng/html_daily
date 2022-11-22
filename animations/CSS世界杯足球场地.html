@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>带弹出窗口的icon</title>
+    <title>CSS世界杯足球场地</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
     <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
@@ -49,86 +49,83 @@
             flex-wrap: wrap;
             align-content: center;
             justify-content: center;
-            margin: 20px;
-            position: relative;
-            margin-bottom: 40px;
+            padding: 20px;
         }
 
-
-        a {
-            position: relative;
-            background: #ffffff;
-            border-radius: 50%;
-            padding: 15px;
-            margin: 10px;
-            width: 50px;
-            height: 50px;
-            font-size: 18px;
+        .football {
+            width: 365px;
+            height: 204px;
+            background-color: #00b36b;
+            box-shadow: -1px -1px 4px 3px lightgrey;
+            border-radius: 4px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            position: relative;
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            color: #333333;
         }
-        a i{font-size: 30px !important;}
-
-        a .tooltip {
-            position: absolute;
-            top: 0;
-            font-size: 14px;
-            background: #ffffff;
-            color: #ffffff;
-            padding: 5px 8px;
-            border-radius: 5px;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            font-family: Philosopher;
-            font-weight: bold;
-        }
-
-        a .tooltip::before {
-            position: absolute;
+        .football::before{
             content: "";
-            height: 8px;
-            width: 8px;
-            background: #ffffff;
-            bottom: -3px;
-            left: 50%;
-            transform: translate(-50%) rotate(45deg);
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #fff;
+            border-radius: 100%;
+            margin: auto;
+            left: 132px;
+            top: 50px;
+        }
+        .football::after{
+            content: "⚽️";
+            position: absolute;
+            font-size: 30px;
+            left: 166px;
+            top: 78px;
+            transition: all 2s;
+        }
+        .football:hover::after{
+            left: 20px;
         }
 
-        a:hover .tooltip {
-            top: -45px;
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
+
+        .left {
+            border: 2px solid white;
+            width: 172px;
+            height: 174px;
+            position: relative;
+        }
+        .left::before{
+            content: "";
+            width: 20px;
+            height: 60px;
+            border: 2px solid #fff;
+            position: absolute;
+            left: 0px;
+            border-left: none;
+            top: 57px;
+        }
+        .left::after{
+            content: "";
+            width: 40px;
+            height: 90px;
+            border: 2px solid #fff;
+            position: absolute;
+            left: 0px;
+            border-left: none;
+            top: 40px;
         }
 
-        a:hover span,
-        a:hover .tooltip {
-            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+        .right {
+            border-right: none;
+            transform: rotate(180deg);
         }
-
-        a:hover,
-        a:hover .tooltip,
-        a:hover .tooltip::before {
-            background: #333333;
-            color: #ffffff;
+        .right::before{
+            right: 0px;
         }
-
 
         .code {
             padding: 25px 15px;
             border-radius: 5px;
             overflow: hidden;
-            padding-bottom: 0px;
-            margin-top: 40px;
         }
 
         .code img {
@@ -141,38 +138,41 @@
     <div class="wrap">
         <!-- 标题 -->
         <div class="title">
-            <span>带弹出窗口的icon</span>
+            <span>世界杯足球场地</span>
         </div>
         <!-- 展示效果 -->
         <div class="effect">
-            <a>
-                <span class="tooltip">Github</span>
-                <span><i class="iconfont icon-github"></i></span>
-            </a>
-            <a>
-                <span class="tooltip">Apple</span>
-                <span><i class="iconfont icon-apple"></i></span>
-            </a>
+            <div class="football">
+                <div class="left"></div>
+                <div class="left right"></div>
+            </div>
         </div>
         <!-- 代码 -->
         <div class="code">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="../static/image/2022-11-21-001.png">
+                        <img src="../static/image/2022-11-21-01.png">
                     </div>
                     <div class="swiper-slide">
-                        <img src="../static/image/2022-11-21-002.png">
+                        <img src="../static/image/2022-11-21-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-21-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-21-04.png">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 <script>
     new Swiper('.swiper', {
         autoplay: {
-            delay: 2000,
+            delay: 3000,
         },
     })        
 </script>
