@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS果冻底部标签栏交互</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_tz5cck0m6p.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            height: 150px;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .effect {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            position: relative;
+            margin: 50px;
+        }
+
+        .footer {
+            position: relative;
+            display: flex;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .footer a {
+            position: relative;
+            text-decoration: none;
+            color: #53588b;
+            font-family: AlimamaShuHeiTi-Bold;
+            font-size: 15px;
+            text-align: center;
+            display: flex;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 2;
+            align-items: center;
+            height: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 75px;
+        }
+
+        .active i {
+            transform: translateY(-30px);
+            color: #fff;
+        }
+
+        .active b {
+            transform: translateY(-12px) !important;
+            opacity: 1 !important;
+        }
+
+        .footer a b {
+            position: relative;
+            transition: 0.3s ease top;
+            width: 100%;
+            transform: translateY(10px);
+            transition: all 0.5s;
+            color: #f44336;
+            opacity: 0;
+        }
+
+        .footer a i {
+            position: relative;
+            transition: all 0.5s;
+        }
+
+
+        .footer a:hover b {
+            top: 0;
+        }
+
+        .footer a:hover i {
+            left: 0;
+        }
+
+        .footer span {
+            position: absolute;
+            background: #f44336;
+            width: 55px;
+            height: 55px;
+            top: -40%;
+            left: 20px;
+            border-radius: 100%;
+            border: 5px solid #121212;
+            transition: left 0.5s;
+        }
+
+        i {
+            font-size: 24px !important;
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>果冻底部标签栏交互</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect flex">
+            <div class="footer">
+                <a class="active" onclick="change(this,1)">
+                    <i class="iconfont icon-shouye"></i>
+                    <b>首页</b>
+                </a>
+                <a onclick="change(this,2)">
+                    <i class="iconfont icon-fenlei"></i>
+                    <b>分类</b>
+                </a>
+                <a onclick="change(this,3)">
+                    <i class="iconfont icon-gouwu"></i>
+                    <b>购物车</b>
+                </a>
+                <a onclick="change(this,4)">
+                    <i class="iconfont icon-wode"></i>
+                    <b>我的</b>
+                </a>
+                <span></span>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-24-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-24-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-24-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-24-04.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+        },
+    })
+    const menu = document.querySelectorAll('.footer a')
+    const button = document.querySelector('.footer span')
+    function change (e, index) {
+        menu.forEach(item => {
+            item.removeAttribute('class', 'active')
+            if (e == item) {
+                console.log(item)
+            }
+        });
+        e.setAttribute('class', 'active')
+        let number = (index - 1) * 75 + 20
+        button.setAttribute('style', `left:${number}px`)
+    }
+</script>
+
+</html>
