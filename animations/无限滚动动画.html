@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>CSS无限滚动动画</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3711888_q1uicgqcwzd.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .wrap {
+            align-content: flex-start;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            padding: 30px;
+        }
+
+        .title span {
+            font-size: 40px;
+            font-family: AlimamaShuHeiTi-Bold;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            position: relative;
+            margin: auto;
+        }
+
+        .loop-wrap {
+            width: 30rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loop {
+            display: flex;
+            width: fit-content;
+            animation-name: loop;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: var(--direction);
+            animation-duration: var(--duration);
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .tag {
+            display: flex;
+            align-items: center;
+            gap: 0 0.2rem;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            background-color: #334155;
+            border-radius: 0.4rem;
+            padding: 0.7rem 1rem;
+            margin-right: 1rem;
+            box-shadow: 0 0.1rem 0.2rem rgb(0 0 0 / 20%), 0 0.1rem 0.5rem rgb(0 0 0 / 30%), 0 0.2rem 1.5rem rgb(0 0 0 / 40%);
+            height: 40px;
+        }
+
+        .tag span {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        .fade {
+            pointer-events: none;
+            background: linear-gradient(90deg, #121212, transparent 30%, transparent 70%, #121212);
+            position: absolute;
+            inset: 0;
+        }
+
+        @keyframes loop {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .code {
+            padding: 25px 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .code img {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 标题 -->
+        <div class="title">
+            <span>无限滚动动画</span>
+        </div>
+        <!-- 展示效果 -->
+        <div class="effect">
+            <div class="loop-wrap">
+                <div class="loop">
+                    <div class="tag"><span>#</span>Typescript</div>
+                    <div class="tag"><span>#</span>Javascript</div>
+                    <div class="tag"><span>#</span>HTML</div>
+                    <div class="tag"><span>#</span>CSS</div>
+                    <div class="tag"><span>#</span>React</div>
+                    <div class="tag"><span>#</span>Vue</div>
+                    <div class="tag"><span>#</span>Typescript</div>
+                    <div class="tag"><span>#</span>Javascript</div>
+                    <div class="tag"><span>#</span>HTML</div>
+                    <div class="tag"><span>#</span>CSS</div>
+                    <div class="tag"><span>#</span>React</div>
+                    <div class="tag"><span>#</span>Vue</div>
+                </div>
+                <div class="loop">
+                    <div class="tag"><span>#</span>Python</div>
+                    <div class="tag"><span>#</span>PHP</div>
+                    <div class="tag"><span>#</span>Java</div>
+                    <div class="tag"><span>#</span>Golang</div>
+                    <div class="tag"><span>#</span>.Net</div>
+                    <div class="tag"><span>#</span>NodeJS</div>
+                    <div class="tag"><span>#</span>Python</div>
+                    <div class="tag"><span>#</span>PHP</div>
+                    <div class="tag"><span>#</span>Java</div>
+                    <div class="tag"><span>#</span>Golang</div>
+                    <div class="tag"><span>#</span>.Net</div>
+                    <div class="tag"><span>#</span>NodeJS</div>
+                </div>
+                <div class="loop">
+                    <div class="tag"><span>#</span>Mysql</div>
+                    <div class="tag"><span>#</span>PostgreSQL</div>
+                    <div class="tag"><span>#</span>Oracle</div>
+                    <div class="tag"><span>#</span>SQLServer</div>
+                    <div class="tag"><span>#</span>Redis</div>
+                    <div class="tag"><span>#</span>Memcached</div>
+                    <div class="tag"><span>#</span>Mysql</div>
+                    <div class="tag"><span>#</span>PostgreSQL</div>
+                    <div class="tag"><span>#</span>Oracle</div>
+                    <div class="tag"><span>#</span>SQLServer</div>
+                    <div class="tag"><span>#</span>Redis</div>
+                    <div class="tag"><span>#</span>Memcached</div>
+                </div>
+                <div class="fade"></div>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <div class="code">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-27-01.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-27-02.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-27-03.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../static/image/2022-11-27-04.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+        },
+    })
+    const loop = document.querySelectorAll('.wrap .loop')
+    loop.forEach((val, key) => {
+        let number = Math.floor(Math.random() * (20000 - 15000)) + 15000
+        if (key === 1) {
+            val.setAttribute('style', '--direction:reverse;--duration: ' + number + 'ms')
+        } else {
+            val.setAttribute('style', '--direction:normal;--duration: ' + number + 'ms')
+        }
+    })
+</script>
+
+</html>
